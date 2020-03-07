@@ -1,0 +1,11 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'VT323', monospace;
+}
+
+.clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
