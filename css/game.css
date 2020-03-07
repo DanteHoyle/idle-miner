@@ -1,0 +1,49 @@
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+}
+
+body {
+    background-color: lightgrey;
+}
+
+#main-control-box {
+    width: 800px;
+    height: 600px;
+    border-radius: 0% 5%;
+    border: solid black 1px;
+    box-shadow: black 0px 0px 8px;
+    background-color: white;
+    overflow-y: auto;
+}
+
+#main-control-box h2 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#pickaxe { 
+    width: 40px;
+}
+
+.swing {
+    animation-name: swing;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.box {
+    width: 200px;
+    margin: auto;
+
+    margin-top: 50px;
+}
+
+@keyframes swing {
+    0%   {transform: rotate(0deg);}
+    40%  {transform: rotate(-20deg);}
+    80%  {transform: rotate(85deg);}
+    100% {transform: rotate(0deg);}
+}
