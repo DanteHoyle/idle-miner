@@ -1,3 +1,7 @@
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
 .center {
     position: absolute;
     top: 50%;
@@ -34,11 +38,18 @@ body {
     animation-iteration-count: infinite;
 }
 
-.box {
-    width: 200px;
+#miner-zone {
+    width: 80%;
     margin: auto;
+    height: 50%;
+    border: 1px black solid;
+    overflow-y: auto;
+}
 
-    margin-top: 50px;
+#controls {
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
 }
 
 @keyframes swing {
@@ -46,4 +57,62 @@ body {
     40%  {transform: rotate(-20deg);}
     80%  {transform: rotate(85deg);}
     100% {transform: rotate(0deg);}
+}
+
+/* Buttons */
+.button1 {
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: rgb(197, 197, 197);
+}
+.button1:hover {
+    background-color: rgb(206, 206, 206);
+}
+.button1:active {
+    border: solid 1px blue;
+}
+
+/* Progress Bar */
+.progressbar-parent {
+    width: 90%;
+    height: 80%;
+    background-color: dimgrey;
+    z-index: 99;
+}
+
+.progressbar {
+    position: relative;
+    background-color: rgb(0, 255, 0);
+    left: 0;
+
+    height: 100%;
+    animation-name: progress;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    z-index: 100;
+}
+
+.table-string {
+    width: 140px;
+}
+
+.table-progress {
+    width: 200px;
+}
+
+th {
+    width: 50px;
+}
+
+td {
+    text-align: center;
+}
+
+@keyframes progress {
+    from {
+        animation-timing-function: linear;
+        width: 0%;
+    }
+    to   {width: 100%;}
 }
