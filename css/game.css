@@ -87,7 +87,6 @@ body {
     background-color: rgb(0, 255, 0);
     left: 0;
     animation-name: progress;
-    animation-duration: 20s;
     animation-iteration-count: infinite;
 }
 
