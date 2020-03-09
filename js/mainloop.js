@@ -10,9 +10,18 @@ function Miner(id) {
         luck: 12
     };
 
+    this.ddestroy = function() {
+        this.div.remove();
+        console.log("Goodbye Mine!");
+    }
+
+    this.setProgressTimer = function(seconds) {
+        this.progressInner.style.animation = "progress "+seconds+"s infinite";
+    }
+
     this.id = id;
     this.currentTask = "mining";
-    this.mine_time = Math.floor(Math.random() * 5 + 5);
+    this.mine_time = Math.floor(Math.random() * 10 + 1);
 
     // Create Parent Div
     this.div = document.createElement("tr");
@@ -48,17 +57,18 @@ function Miner(id) {
     this.progressOuter.appendChild(this.progressInner);
     this.progressOuter.classList.add("progressbar-parent");
     this.progressInner.classList.add("progressbar");
-    this.progressInner.animationDuraiton = this.mine_time + "s";
-    this.div.appendChild(this.progressOuter);   
+
+    // Animate Bar
+    this.setProgressTimer(this.mine_time);
+    this.div.appendChild(this.progressOuter);
+    // this.ddestroy();
+
     // If this prints to console, everything probably went well I guess
     console.log("Hello Mine!");
     console.log(this.mine_time + "s")
-    setTimeout(() => {this.ddestroy()}, this.mine_time * 1000);
+    // setTimeout(() => {this.ddestroy()}, this.mine_time * 1000);
 
-    this.ddestroy = function() {
-        this.div.remove();
-        console.log("Goodbye Mine!");
-    }
+    
 
 }
 
