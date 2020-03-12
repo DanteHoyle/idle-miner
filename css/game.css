@@ -3,10 +3,8 @@
 }
 
 .center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -60%);
+    margin: auto;
+    margin-top: 10px;
 }
 
 body {
@@ -21,6 +19,12 @@ body {
     box-shadow: black 0px 0px 8px;
     background-color: white;
     overflow-y: auto;
+}
+
+#gold-counter-box {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
 }
 
 #main-control-box h2 {
