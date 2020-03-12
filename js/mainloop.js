@@ -2,19 +2,22 @@
 "use strict";
 var nextId = 0;
 var miner_list = [];
+var userGold = 0;
 
 function Miner(id) {
     this.stats = {
-        strength: 10,
-        dexterity: 11,
-        luck: 12
+        strength: randomNum(1, 100),
+        dexterity: randomNum(1, 100),
+        luck: randomNum(1, 100)
     };
 
+    // Destroys the div
     this.ddestroy = function() {
         this.div.remove();
         console.log("Goodbye Mine!");
     }
 
+    // Animation Function
     this.setProgressTimer = function(seconds) {
         this.progressInner.style.animation = "progress "+seconds+"s infinite";
     }
@@ -67,10 +70,24 @@ function Miner(id) {
     console.log("Hello Mine!");
     console.log(this.mine_time + "s")
     // setTimeout(() => {this.ddestroy()}, this.mine_time * 1000);
-
-    
-
 }
+
+function createMiner() {
+    miner_list.push(new Miner("miner" + nextId));
+    nextId += 1;
+}
+
+function loop() {
+    // Update Gold Text
+    document.getElementById("gold-counter").innerHTML = userGold;
+    userGold += 1;
+}
+
+function randomNum (min=1, max) {
+    return Math.floor((Math.random() * (max - min)) + min)
+}
+
+setInterval(()=>{loop()}, 16.67);
 
 // class Miner {
 //     constructor(id) {
@@ -134,11 +151,6 @@ function Miner(id) {
 //         console.log("Goodbye Mine!");
 //     }
 // }
-
-function createMiner() {
-    miner_list.push(new Miner("miner" + nextId));
-    nextId += 1;
-}
 
 // function swing_pick_axe() {
 //     if (swinging == false) {
