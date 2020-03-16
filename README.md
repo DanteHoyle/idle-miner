@@ -1,4 +1,3 @@
 # idle-miner
 
-This is an Idle game developed by Dante Hoyle March 2020.
-It will be written in Javascript, HTML, and CSS.
+This was a learning experiment for me to get into making idle games. I will use what I've learned to start a new project, adventure-miner

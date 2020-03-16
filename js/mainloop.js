@@ -87,6 +87,7 @@ function randomNum (min=1, max) {
     return Math.floor((Math.random() * (max - min)) + min)
 }
 
+// Runs loop 60 times per seconds
 setInterval(()=>{loop()}, 16.67);
 
 // class Miner {
